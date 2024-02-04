@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 
@@ -22,7 +22,11 @@ export const metadata: Metadata = {
     "Estevão Ventura",
     "Estevão Boaventura Ventura",
   ],
-  viewport: "width=device-width, initial-scale=1",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  viewportFit: "cover",
 };
 
 export default function RootLayout({
