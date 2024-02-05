@@ -1,10 +1,11 @@
 import type { Config } from "tailwindcss";
-
-const config: Config = {
+import { withTV } from "tailwind-variants/transformer";
+const config: Config = withTV({
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/lib/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   darkMode: "media", // or 'class'
   theme: {
@@ -18,6 +19,7 @@ const config: Config = {
       ping: "ping 1s cubic-bezier(0, 0, 0.2, 1) infinite",
       pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       bounce: "bounce 1s infinite",
+      topToBottomFadeIn: "topToBottomFadeIn 1.85s ease-in-out forwards",
     },
     aria: {
       busy: 'busy="true"',
@@ -592,6 +594,20 @@ const config: Config = {
           animationTimingFunction: "cubic-bezier(0,0,0.2,1)",
         },
       },
+
+      topToBottomFadeIn: {
+        "0%": {
+          transform: "translateY(-100%)",
+          opacity: "0",
+        },
+        "50%": {
+          transform: "translateY(50%) scale(1.05)",
+        },
+        "100%": {
+          transform: "translateY(0)",
+          opacity: "1",
+        },
+      },
     },
     letterSpacing: {
       tighter: "-0.05em",
@@ -1059,5 +1075,5 @@ const config: Config = {
     },
   },
   plugins: [],
-};
+});
 export default config;
