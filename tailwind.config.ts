@@ -18,7 +18,7 @@ const config: Config = withTV({
             spin: 'spin 1s linear infinite',
             ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
             pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-            bounce: 'bounce 1s infinite',
+            softBounce: 'bounce 1s ease-in-out infinite',
             topToBottomFadeIn: 'topToBottomFadeIn 1.85s ease-in-out forwards',
         },
         aria: {
@@ -49,6 +49,8 @@ const config: Config = withTV({
         backgroundColor: ({ theme }) => theme('colors'),
         backgroundImage: {
             none: 'none',
+            'gradient-radial':
+                'radial-gradient(circle, hsla(229, 84%, 5%, 1) 0%, hsla(221, 44%, 11%, 1) 70%, hsla(217, 33%, 17%, 1) 100%)',
             'gradient-to-t':
                 'linear-gradient(to top, var(--tw-gradient-stops))',
             'gradient-to-tr':
@@ -129,6 +131,7 @@ const config: Config = withTV({
             xl: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)',
             '2xl': '0 25px 50px -12px rgb(0 0 0 / 0.25)',
             inner: 'inset 0 2px 4px 0 rgb(0 0 0 / 0.05)',
+            neon: `0 0 5px 0 rgb(0 0 0 / 0.5), 0 0 10px 0 rgb(0 0 0 / 0.5)`,
             none: 'none',
         },
         boxShadowColor: ({ theme }) => theme('colors'),
@@ -595,14 +598,14 @@ const config: Config = withTV({
                     opacity: '.5',
                 },
             },
-            bounce: {
+            softBounce: {
                 '0%, 100%': {
                     transform: 'translateY(-25%)',
-                    animationTimingFunction: 'cubic-bezier(0.8,0,1,1)',
+                    animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)',
                 },
                 '50%': {
-                    transform: 'none',
-                    animationTimingFunction: 'cubic-bezier(0,0,0.2,1)',
+                    transform: 'translateY(0)',
+                    animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
                 },
             },
 

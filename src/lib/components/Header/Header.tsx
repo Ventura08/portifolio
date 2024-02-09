@@ -2,13 +2,28 @@ import { tv } from 'tailwind-variants'
 
 const header = tv(
     {
-        base: 'transition-all flex justify-center text-white text-sm border-2 border-gray-50 mx-6 my-4 px-6 py-4 animate-topToBottomFadeIn',
+        base: `
+                transition-all 
+                flex 
+                justify-center 
+                text-white 
+                text-sm 
+                border-2 
+                border-gray-50 
+                shadow-neon 
+                rounded-xl 
+                mx-6 
+                my-4 
+                px-6 
+                py-4 
+                animate-topToBottomFadeIn
+            `,
         variants: {
             size: {
                 small: 'text-sm',
-                medium: 'text-base border-none',
-                large: 'text-lg border-none',
-                extraLarge: 'text-xl border-none',
+                medium: 'text-base border-none shadow-none',
+                large: 'text-lg',
+                extraLarge: 'text-xl',
             },
         },
     },
