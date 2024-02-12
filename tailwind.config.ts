@@ -19,7 +19,9 @@ const config: Config = withTV({
             ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
             pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
             softBounce: 'bounce 1s ease-in-out infinite',
-            topToBottomFadeIn: 'topToBottomFadeIn 1.85s ease-in-out forwards',
+            topToBottomFadeIn: 'topToBottomFadeIn .9s ease-in-out forwards',
+            slideRightToLeft: 'slideRightToLeft .9s ease-in-out forwards',
+            rotateRightLeft: 'rotateRightLeft 1.85s ease-in-out forwards',
         },
         aria: {
             busy: 'busy="true"',
@@ -615,11 +617,29 @@ const config: Config = withTV({
                     opacity: '0',
                 },
                 '50%': {
-                    transform: 'translateY(50%) scale(1.05)',
+                    transform: 'translateY(50%) scale(0.9)',
                 },
                 '100%': {
                     transform: 'translateY(0)',
                     opacity: '1',
+                },
+            },
+            slideRightToLeft: {
+                '0%': {
+                    transform: 'translateX(-100%)',
+                    opacity: '0',
+                },
+                '100%': {
+                    transform: 'translateX(0)',
+                    opacity: '1',
+                },
+            },
+            rotateRightLeft: {
+                '0%': {
+                    transform: 'rotate(0deg)',
+                },
+                '100%': {
+                    transform: 'rotate(180deg)',
                 },
             },
         },

@@ -19,7 +19,8 @@
     ],
     "paths": {
       "$/*": ["./src/*"],
-      "$components/*": ["./src/lib/exports/componentExport/*"]
+      "$components/*": ["./src/lib/exports/componentExport/*"],
+      "$assets/*": ["./public/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

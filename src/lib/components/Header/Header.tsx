@@ -12,8 +12,6 @@ const header = tv(
                 border-gray-50 
                 shadow-neon 
                 rounded-xl 
-                mx-6 
-                my-4 
                 px-6 
                 py-4 
                 animate-topToBottomFadeIn

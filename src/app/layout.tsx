@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Montserrat } from 'next/font/google'
 import './globals.css'
-import { Header } from '$components/exports'
+import { Container, Header } from '$components/exports'
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 
@@ -38,10 +38,12 @@ export default function RootLayout({
     return (
         <html lang="pt-br">
             <body
-                className={`bg-gradient-radial min-h-svh bg-no-repeat ${montserrat.className}`}
+                className={`min-h-svh bg-gradient-radial bg-no-repeat ${montserrat.className}`}
             >
-                <Header />
-                {children}
+                <Container>
+                    <Header />
+                    {children}
+                </Container>
             </body>
         </html>
     )
