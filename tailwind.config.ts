@@ -22,6 +22,8 @@ const config: Config = withTV({
             topToBottomFadeIn: 'topToBottomFadeIn .9s ease-in-out forwards',
             slideRightToLeft: 'slideRightToLeft .9s ease-in-out forwards',
             rotateRightLeft: 'rotateRightLeft 1.85s ease-in-out forwards',
+            typewriter:
+                'typeWriter 3.5s steps(40, end),blinkCursor .75s step-end infinite',
         },
         aria: {
             busy: 'busy="true"',
@@ -53,6 +55,8 @@ const config: Config = withTV({
             none: 'none',
             'gradient-radial':
                 'radial-gradient(circle, hsla(229, 84%, 5%, 1) 0%, hsla(221, 44%, 11%, 1) 70%, hsla(217, 33%, 17%, 1) 100%)',
+            'gradient-linear':
+                'linear-gradient(to right, #31A9EC,#AFFAFF,#31A9EC)',
             'gradient-to-t':
                 'linear-gradient(to top, var(--tw-gradient-stops))',
             'gradient-to-tr':
@@ -626,7 +630,7 @@ const config: Config = withTV({
             },
             slideRightToLeft: {
                 '0%': {
-                    transform: 'translateX(-100%)',
+                    transform: 'translateX(100%)',
                     opacity: '0',
                 },
                 '100%': {
@@ -640,6 +644,22 @@ const config: Config = withTV({
                 },
                 '100%': {
                     transform: 'rotate(180deg)',
+                },
+            },
+            typeWriter: {
+                '0%': {
+                    width: '0',
+                },
+                '100%': {
+                    width: '100%',
+                },
+            },
+            blinkCursor: {
+                '0%, 100%': {
+                    borderColor: 'transparent',
+                },
+                '50%': {
+                    borderColor: '#2E96D1',
                 },
             },
         },

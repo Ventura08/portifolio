@@ -9,7 +9,6 @@ const avatar = tv(
                 h-auto
                 rounded-full
                 animate-slideRightToLeft
-                -scale-x-100
             `,
         variants: {
             size: {},
