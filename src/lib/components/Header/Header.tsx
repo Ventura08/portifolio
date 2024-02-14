@@ -14,14 +14,13 @@ const header = tv(
                 rounded-xl 
                 px-6 
                 py-4 
-                animate-topToBottomFadeIn
             `,
         variants: {
             size: {
                 small: 'text-sm',
                 medium: 'text-base border-none shadow-none',
-                large: 'text-lg',
-                extraLarge: 'text-xl',
+                large: 'text-xl',
+                extraLarge: 'text-2xl',
             },
         },
     },

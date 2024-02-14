@@ -1,6 +1,7 @@
 import Image from 'next/image'
-import { tv } from 'tailwind-variants'
+import { VariantProps, tv } from 'tailwind-variants'
 import myAvatar from '$assets/my-avatar.png'
+import { ComponentProps } from 'react'
 
 const avatar = tv(
     {
@@ -8,7 +9,6 @@ const avatar = tv(
                 w-full
                 h-auto
                 rounded-full
-                animate-slideRightToLeft
             `,
         variants: {
             size: {},
@@ -18,16 +18,18 @@ const avatar = tv(
         responsiveVariants: true,
     }
 )
-export const AvatarImage = () => {
+
+type AvatarImageProps = ComponentProps<'img'> & VariantProps<typeof avatar>
+
+export const AvatarImage = ({ className, ...props }: AvatarImageProps) => {
     return (
-        <section>
-            <Image
-                src={myAvatar}
-                alt={'Estevão Boaventura'}
-                className={avatar()}
-                sizes="100vw"
-                priority
-            />
-        </section>
+        <Image
+            src={myAvatar}
+            alt={'Estevão Boaventura'}
+            className={avatar({ className })}
+            sizes="100vw"
+            quality={100}
+            priority
+        />
     )
 }

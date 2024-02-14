@@ -659,7 +659,7 @@ const config: Config = withTV({
                     borderColor: 'transparent',
                 },
                 '50%': {
-                    borderColor: '#2E96D1',
+                    borderRight: '2px solid #2E96D1',
                 },
             },
         },

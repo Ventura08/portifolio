@@ -1,26 +1,27 @@
-import { tv } from 'tailwind-variants'
+import { VariantProps, tv } from 'tailwind-variants'
+import { Button } from '$components/exports'
+import { ComponentProps } from 'react'
 
 const avatarText = tv(
     {
         slots: {
             textContainer: `
                 flex 
-                flex-col 
+                flex-col
                 items-center 
                 justify-center
+                gap-5
             `,
             title: `
                 text-1xl 
-                text-center 
+                text-center
+                w-full
                 text-white 
-                font-bold 
+                letter-spacing-15
             `,
             typingDiv: `
                 overflow-hidden
-                border-solid
-                border-r-2
                 whitespace-nowrap
-                m-auto
                 letter-spacing-15
                 animate-typewriter
             `,
@@ -43,6 +44,7 @@ const avatarText = tv(
                     typingDivText: 'text-4xl',
                 },
                 large: {
+                    textContainer: `*:text-left items-start`,
                     title: 'text-3xl',
                     typingDivText: 'text-5xl',
                 },
@@ -58,7 +60,10 @@ const avatarText = tv(
         responsiveVariants: true,
     }
 )
-export const AvatarText = () => {
+
+type AvatarTextProps = ComponentProps<'div'> & VariantProps<typeof avatarText>
+
+export const AvatarText = ({ className, ...props }: AvatarTextProps) => {
     const { textContainer, title, typingDiv, typingDivText } = avatarText({
         size: {
             sm: 'small',
@@ -69,11 +74,16 @@ export const AvatarText = () => {
         },
     })
     return (
-        <div className={textContainer()}>
+        <div className={textContainer({ className })}>
             <h1 className={title()}>Seja bem-vindo, eu sou</h1>
             <div className={typingDiv()}>
-                <h1 className={typingDivText()}>Estevão Boaventura</h1>
+                <h1 className={typingDivText()}>{'Estevão Boaventura'}</h1>
             </div>
+            <h1 className={title()}>
+                Desenvolvedor Fullstack - Typescript | Javascript | NextJS |
+                NodeJS | Laravel | Python
+            </h1>
+            <Button className="w-full md:w-2/3">Entre em contato</Button>
         </div>
     )
 }

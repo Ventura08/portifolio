@@ -4,21 +4,19 @@ import { tv } from 'tailwind-variants'
 const avatarContainer = tv(
     {
         base: `
-        flex 
-        flex-col 
-        items-center 
-        justify-center 
+        grid
+        grid-cols-12
         gap-4 
         h-full 
         w-full 
-        p-4 
+        p-4
         bg-gradient-radial 
         bg-no-repeat
     `,
         variants: {
             size: {
                 small: 'text-sm',
-                medium: 'text-base border-none shadow-none',
+                medium: 'text-base border-none shadow-none p-16',
                 large: 'text-lg',
                 extraLarge: 'text-xl',
             },
@@ -43,8 +41,8 @@ export default function Home() {
                     },
                 })}
             >
-                <AvatarImage />
-                <AvatarText />
+                <AvatarImage className="col-span-12 lg:order-2 lg:col-span-5" />
+                <AvatarText className="col-span-12 lg:order-1 lg:col-span-7" />
             </div>
         </>
     )
