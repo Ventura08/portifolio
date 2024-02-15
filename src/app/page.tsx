@@ -1,4 +1,4 @@
-import { AvatarImage, AvatarText } from '$components/exports'
+import { AvatarImage, AvatarText, Sumario } from '$components/exports'
 import { tv } from 'tailwind-variants'
 
 const avatarContainer = tv(
@@ -44,6 +44,7 @@ export default function Home() {
                 <AvatarImage className="col-span-12 lg:order-2 lg:col-span-5" />
                 <AvatarText className="col-span-12 lg:order-1 lg:col-span-7" />
             </div>
+            <Sumario />
         </>
     )
 }
