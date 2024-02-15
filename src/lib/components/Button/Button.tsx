@@ -15,6 +15,7 @@ const button = tv(
                 border-none
                 shadow-none
                 transition-all
+                duration-300
                 hover:shadow-lg
             `,
         variants: {
